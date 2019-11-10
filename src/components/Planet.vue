@@ -1,5 +1,7 @@
 <template>
-    <div class="planet" :style="styles">
+    <div class="planet">
+        <div class="shape" :style="styles">
+        </div>
         <span class="name">{{name}}</span>
     </div>
 </template>
@@ -21,7 +23,6 @@ export default {
             styles: {
                 width: this.diameterInPx + 'px',
                 height: this.diameterInPx + 'px',
-                lineHeight: this.diameterInPx + 'px',
                 backgroundColor: this.bgColor
             }
         }
@@ -30,13 +31,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .planet {
-    border-radius: 50%;
     text-align: center;
-    vertical-align: middle;
     margin: 10px;
+    .shape {
+        border-radius: 50%;
+        margin: 0 auto;
+        vertical-align: middle;
+    }
     .name {
         color: #FFFFFF;
-        font-size: 11px;
+        font-size: 12px;
     }
 }
 </style>
