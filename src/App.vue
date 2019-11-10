@@ -1,34 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Planet
-      name="Earth"
-      radius="100"
-    />
+    <div class="planet-wrapper">
+      <Planet
+        name="Earth"
+        radius="6371"
+        bgColor="#008CE6"
+      />
+      <Planet
+        name="Jupiter"
+        radius="71492"
+        bgColor="#CD853F"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 import Planet from './components/Planet.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
     Planet
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+html, body {
+    overflow-x: scroll;
+    margin: 0;
+    padding: 0;
+    & * {
+      box-sizing: border-box;
+    }
+    & *::before, & *::after {
+      box-sizing: border-box;
+    }
+}
+
 #app {
+  display: block;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.planet-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-x: auto;
 }
 </style>
