@@ -29,14 +29,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    $box-model: border-box;
-    .planet {
-        box-sizing: $box-model;
-        border-radius: 50%;
-        text-align: center;
-        vertical-align: middle;
-        .name {
-            color: #FFFFFF;
-        }
+.planet {
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 10px;
+    .name {
+        color: #FFFFFF;
+        font-size: 11px;
     }
+}
 </style>
