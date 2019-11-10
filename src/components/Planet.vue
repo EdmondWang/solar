@@ -1,6 +1,6 @@
 <template>
-    <div class="planet">
-        <div class="shape" :style="styles">
+    <div class="planet" :style="stylesOfPlanet">
+        <div class="shape" :style="stylesOfShape">
         </div>
         <span class="name">{{name}}</span>
     </div>
@@ -13,14 +13,19 @@ export default {
     props: {
         name: String,
         radius: Number,
+        marginRight: Number,
         bgColor: String
     },
     data() {
         this.radiusInPx = KmAndPx.km2px(this.radius);
         this.diameterInPx = this.radiusInPx * 2;
 
+        this.marginRightInPx = KmAndPx.km2px(this.marginRight);
         return {
-            styles: {
+            stylesOfPlanet: {
+                // marginRight: this.marginRightInPx + 'px'
+            },
+            stylesOfShape: {
                 width: this.diameterInPx + 'px',
                 height: this.diameterInPx + 'px',
                 backgroundColor: this.bgColor

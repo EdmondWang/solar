@@ -4,6 +4,7 @@
       <Planet
         name="Sun"
         :radius=696000
+        :marginRight=46001200
         bgColor="#FF8C00"
       />
       <Planet
